@@ -1,0 +1,123 @@
+.group-chat {
+  height: 100vh;
+  width: calc(100vw - 300px);
+  float: right;
+  background-color: $groupChatColor;
+  position: relative;
+  
+  .chat-main {
+    max-height: $userBarHeight;
+    border-bottom: solid 1px #eeeeee;
+    padding: 0 40px;
+
+    &__name {
+      display: inline-block;
+      font-size: 20px;
+      margin-top: 35px;
+    }
+
+    &__button {
+      display: block;
+      float: right;
+      margin-top: 28px;
+      color: rgb(56, 174, 240);
+      border: solid 1px rgb(56, 174, 240);
+      height: 40px;
+      padding: 0 20px;
+      line-height: 40px;
+    }
+
+    &__member {
+      font-size: 12px;
+      margin-top: 15px;
+      color: #999999;
+    }
+  }
+
+  .messages {
+    // グループチャットの中身
+    max-height: calc(100vh - 282px); // group-editとsend-contentを足すと282px
+    overflow-y: auto;
+    padding: 46px 40px 46px 40px;
+
+    .message {
+      padding-bottom: 40px;
+
+      .upper-info {
+        margin-bottom: 10px;
+
+        &__user {
+          font-size: 16px;
+          font-weight: bold;
+          float: left;
+        }
+
+        &__date {
+          font-size: 12px;
+          float: left;
+          height: 100%;
+          margin-left: 10px;
+          color: #999999;
+
+        }
+        
+        &::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+      }
+
+      .message__text {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .send {
+    width: calc(100% - 80px);
+    background-color: rgb(221, 221, 221);
+    position: absolute;
+    bottom: 0px;  // 親要素からの相対位置(親要素の一番下)
+    padding: 20px 40px;
+
+    .wrapper {
+      display: inline-block;
+      width: calc(100% - 115px);
+      position: relative;
+
+      .send__form {
+        height: 50px;
+        width: calc(100% - 50px);
+        background-color: white;
+        padding-left: 10px;
+        padding-right: 40px;
+        border: 0;
+      }
+      
+      .image-select {
+        font-size: 1.3rem;
+        position: absolute;
+        top: 10px;    // 親クラスからの相対位置
+        right: 10px;
+        cursor: pointer;
+
+        .hidden {
+          display: none;
+        }
+      }
+    }
+
+    &__button {
+      background-color: #38aef0;
+      color: white;
+      height: 50px;
+      width: 100px;
+      float: right;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
