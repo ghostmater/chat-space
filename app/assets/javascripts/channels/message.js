@@ -22,8 +22,6 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    console.log($('#new_message')[0]);
-    console.log('debug');
 
     $.ajax({
       url: url,
