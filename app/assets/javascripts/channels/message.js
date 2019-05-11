@@ -11,9 +11,9 @@ $(function(){
                       ${message.created_at}
                     </p>
                   </div>`;
-    var content = message.content ? `<p class="message__text">
-                                       ${message.content}
-                                     </p>` : "";
+    var content = `<p class="message__text">
+                    ${message.content}
+                   </p>`;
 
     return html + content + `<img class="image" src=${image}></div>`;
   }
@@ -42,6 +42,6 @@ $(function(){
     })
     .always(function() { // ボタンをenableにする処理
       $('.send__button').removeAttr('disabled');
-    });
+    })
   });
 })

@@ -11,7 +11,7 @@
           = fa_icon 'cog', class: 'icon'
   .chat-groups
     -#rubyのforでグループ数だけリストを表示
-    - current_user.groups.each do |group|
+    - groups.each do |group|
       = link_to group_messages_path(group) do
         .group
           %p.group__name
