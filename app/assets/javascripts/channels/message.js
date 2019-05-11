@@ -1,8 +1,7 @@
 $(function(){
 
   function buildHTML(message){
-    var image = message.image.url ? message.image.url : "";
-    var html = `<div class="message" data-id=${message.id}>
+    var content = `<div class="message" data-id=${message.id}>
                   <div class="upper-info">
                     <p class="upper-info__user">
                       ${message.user_name}
@@ -10,12 +9,15 @@ $(function(){
                     <p class="upper-info__date">
                       ${message.created_at}
                     </p>
-                  </div>`;
-    var content = `<p class="message__text">
+                  </div>
+                  <p class="message__text">
                     ${message.content}
-                   </p>`;
+                  </p>`;
+    var image = message.image.url ? `<img class="image" src=${message.image.url}></div>` : "";
+    
+    var html = content + image;
 
-    return html + content + `<img class="image" src=${image}></div>`;
+    return html;
   }
 
   $('#new_message').on('submit', function(e){
