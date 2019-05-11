@@ -20,8 +20,8 @@
       display: block;
       float: right;
       margin-top: 28px;
-      color: rgb(56, 174, 240);
-      border: solid 1px rgb(56, 174, 240);
+      color: $skyblue;
+      border: solid 1px $skyblue;
       height: 40px;
       padding: 0 20px;
       line-height: 40px;
@@ -109,7 +109,7 @@
     }
 
     &__button {
-      background-color: #38aef0;
+      background-color: $blue;
       color: white;
       height: 50px;
       width: 100px;

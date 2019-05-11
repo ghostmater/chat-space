@@ -1,23 +1,4 @@
-.sidebar
-  .user
-    %h3.user__name
-      = current_user.name
-    %ul.user__lists
-      %li.list
-        = link_to new_group_path do
-          = fa_icon 'pencil-square-o', class: 'icon'
-      %li.list
-        = link_to edit_user_path(current_user) do
-          = fa_icon 'cog', class: 'icon'
-  .chat-groups
-    -#rubyのforでグループ数だけリストを表示
-    - current_user.groups.each do |group|
-      = link_to group_messages_path(group) do
-        .group
-          %p.group__name
-            = group.name
-          %p.group__message
-            = group.show_last_message
+= render 'devise/shared/index'
 .group-chat
   .chat-main
     %p.chat-main__name
