@@ -67,6 +67,7 @@ $(function(){
       });
       //メッセージを追加
       $('.messages').append(insertHTML);
+
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     })
     .fail(function() {
@@ -74,5 +75,5 @@ $(function(){
     });
   };
 
-  setInterval(reloadMessages, 500000);
+  setInterval(reloadMessages, 5000);
 })
