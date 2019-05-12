@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+
+  def index
+    @users = User.where.not(id: current_user.id).where('name LIKE(?)', "%#{params[:user_name]}%").limit(20)
+    respond_to do |format|
+      format.json # view/index.json.builderでデータをjson形式にする
+    end
+  end
+
   def edit
   end
 
